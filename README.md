@@ -1,7 +1,5 @@
 # Power Grid
-Power Grid is a responsive grid designed for web applications. Use Power Grid where other grid systems don't provide enough control.
-
-With this you can create advanced layouts without playing with CSS. It's declarative which means it's easy to understand and debug.
+Power Grid is a responsive grid designed for web applications. Use Power Grid where other grid systems don't provide enough control. With this you can create advanced layouts without playing with CSS. It's declarative which means it's easy to understand and debug.
 
 Try it out:
 - https://cdn.rawgit.com/Stukent/power-grid/master/build/power-grid.min.js
@@ -10,9 +8,9 @@ Try it out:
 ## Explanation
 
 There are three new `data-` attributes exposed:
-- `data-pos` Position
-- `data-grid` Grid Parameters
-- `data-break` Responsive Breakpoints
+- `data-pos` Position (eg: `<div data-pos="...">`)
+- `data-grid` Grid Parameters (eg: `<div data-grid="...">`)
+- `data-break` Responsive Breakpoints (eg: `<div data-break="...">`)
 
 ### `data-pos`
 The `data-pos` attribute is inspired by SVG Pathstrings. When present on a tag, the tags `position` is set to `absolute`. For example, if you want an element to be:
@@ -80,3 +78,6 @@ The second parameter that you can set is the smallest size of the grid. By defau
 
 ### `data-break`
 This is where the real power of the Power Grid comes into play. If you had an element that had the attribute `data-pos="T0 R0 H4"` but you know that on smaller screens, the height needs to be half that size and on the bottom of the page, simply add `data-break="col2H2 col2B0"`. In the Power Grid, columns and rows are 320px. so using `col2H2` means on any screen size smaller than two columns, set the height to be two units. `data-break` can also show/hide elements by adding `hide` or `show`: `data-break="col2hide"`.
+
+## Why 20px? Why 320? Why 16x16?
+Google and Apple suggest that the minimum tappable area of a UI element is about 40px by 40px. The smallest screen size supported by the Power Grid is 320px by 320px. This means that there would be eight rows and eight columns. Because half widths and heights are useful, this was changed to 16x16.
