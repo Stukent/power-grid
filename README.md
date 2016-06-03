@@ -3,6 +3,12 @@ Power Grid is a responsive grid designed for web applications. Use Power Grid wh
 
 With this you can create advanced layouts without playing with CSS. It's declarative which means it's easy to understand and debug.
 
+Try it out:
+- https://cdn.rawgit.com/Stukent/power-grid/master/build/power-grid.min.js
+- `<script src="https://cdn.rawgit.com/Stukent/power-grid/master/build/power-grid.min.js"></script>`
+
+## Explanation
+
 There are three new `data-` attributes exposed:
 - `data-pos` Position
 - `data-grid` Grid Parameters
