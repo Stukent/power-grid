@@ -14,7 +14,7 @@ There are three new `data-` attributes exposed:
 - `data-grid` Grid Parameters
 - `data-break` Responsive Breakpoints
 
-## `data-pos`
+### `data-pos`
 The `data-pos` attribute is inspired by SVG Pathstrings. When present on a tag, the tags `position` is set to `absolute`. For example, if you want an element to be:
 
 ```css
@@ -73,10 +73,10 @@ Additionally, you can set the origin of an element to the center by using:
 - `cy` Center Vertically
 - `cxy` Center Horizontally
 
-## `data-grid`
+### `data-grid`
 Grids are container elements. There are two parameters you can set. By including `data-grid`, you set the element's `position` to `absolute`. If this is not the desired behavior, and you intended it to be `position: relative`, add `data-grid="inline"`.
 
 The second parameter that you can set is the smallest size of the grid. By default, the grid has no defined size. All units are in 20px so the attribute `data-grid="12x2"` would create a div with a minimum size of 240px by 40px. The largest available size is 16x16, and the smallest is 0x0.
 
-## `data-break`
+### `data-break`
 This is where the real power of the Power Grid comes into play. If you had an element that had the attribute `data-pos="T0 R0 H4"` but you know that on smaller screens, the height needs to be half that size and on the bottom of the page, simply add `data-break="col2H2 col2B0"`. In the Power Grid, columns and rows are 320px. so using `col2H2` means on any screen size smaller than two columns, set the height to be two units. `data-break` can also show/hide elements by adding `hide` or `show`: `data-break="col2hide"`.
