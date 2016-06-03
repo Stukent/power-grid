@@ -71,7 +71,7 @@ Sometimes you need to add two units together, adding `h2H2` would create an elem
 Additionally, you can set the origin of an element to the center by using:
 - `cx` Center Horizontally
 - `cy` Center Vertically
-- `cxy` Center Horizontally
+- `cxy` Center Horizontally and Vertically
 
 ### `data-grid`
 Grids are container elements. There are two parameters you can set. By including `data-grid`, you set the element's `position` to `absolute`. If this is not the desired behavior, and you intended it to be `position: relative`, add `data-grid="inline"`.
