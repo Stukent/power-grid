@@ -6,6 +6,7 @@ Try it out:
 - `<script src="https://cdn.rawgit.com/Stukent/power-grid/master/build/power-grid.min.js"></script>`
 
 ## Examples
+- [Responsive Stukent Log In Form](https://codepen.io/Synvox/pen/KMKwBg)
 - [Google Drive Layout](http://codepen.io/Synvox/pen/EyjvXK)
 
 ## Explanation
