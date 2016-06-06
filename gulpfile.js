@@ -8,7 +8,13 @@ gulp.task('build', function() {
     .pipe(babel({
       presets: ['es2015']
     }))
-    .pipe(uglify())
+    .pipe(uglify({
+      compress: {
+          global_defs: {
+              "DEBUG": false
+          }
+      }
+    }))
     .pipe(rename('power-grid.min.js'))
     .pipe(gulp.dest('build'));
 });
