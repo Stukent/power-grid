@@ -4,11 +4,11 @@ Power Grid is a responsive grid designed for web applications. Use Power Grid wh
 ## Installation
 
 **NPM**
-```
+```bash
 npm install power-grid
 ```
 
-**<script>**
+**`<script>`**
 - https://cdn.rawgit.com/Stukent/power-grid/master/build/power-grid.min.js
 - `<script src="https://cdn.rawgit.com/Stukent/power-grid/master/build/power-grid.min.js"></script>`
 
