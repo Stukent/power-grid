@@ -1,11 +1,18 @@
 # Power Grid
 Power Grid is a responsive grid designed for web applications. Use Power Grid where other grid systems don't provide enough control. With this you can create advanced layouts without playing with CSS. It's declarative which means it's easy to understand and debug.
 
-Try it out:
+## Installation
+
+**NPM**
+```
+npm install power-grid
+```
+
+**<script>**
 - https://cdn.rawgit.com/Stukent/power-grid/master/build/power-grid.min.js
 - `<script src="https://cdn.rawgit.com/Stukent/power-grid/master/build/power-grid.min.js"></script>`
 
-## Examples
+## Examples on Codepen
 - [Responsive Stukent Log In Form](https://codepen.io/Synvox/pen/KMKwBg)
 - [Google Drive Layout](http://codepen.io/Synvox/pen/EyjvXK)
 
@@ -82,5 +89,3 @@ The second parameter that you can set is the smallest size of the grid. By defau
 
 ### `data-break`
 This is where the real power of the Power Grid comes into play. If you had an element that had the attribute `data-pos="T0 R0 H4"` but you know that on smaller screens, the height needs to be half that size and on the bottom of the page, simply add `data-break="col2H2 col2B0"`. In the Power Grid, columns and rows are 320px. so using `col2H2` means on any screen size smaller than two columns, set the height to be two units. `data-break` can also show/hide elements by adding `hide` or `show`: `data-break="col2hide"`.
-
-### Examples
