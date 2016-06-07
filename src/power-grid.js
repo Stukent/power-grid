@@ -10,16 +10,23 @@
     const prefix = opts.prefix || 'data-'
 
     const stylesheet = ''
+    + ((()=>{ // Static
+      let res = `[${prefix}pos] { display: inline-block; position: absolute !important; }`
+              + `[${prefix}grid] {position: absolute !important}`
+              + `[${prefix}pos~="cx"] { transform: translateX(-50%); }`
+              + `[${prefix}pos~="cy"] { transform: translateY(-50%); }`
+              + `[${prefix}pos~="cxy"] { transform: translate(-50%,-50%); }`
+      return res
+    })())
     + ((()=>{ // Grid
-      let res = `[${prefix}grid] {position: absolute !important}`
+      let res = ''
       for(let width = 0; width <= gridCells; width++)
-        for(let height = 0; height < gridCells; height++)
+        for(let height = 0; height <= gridCells; height++)
           res += `[${prefix}grid~="${width}x${height}"] {min-width: ${width * cellSize}px;min-height: ${height * cellSize}px}`
-      res += `[${prefix}grid~="inline"] {position: relative !important}`
       return res
     })())
     + ((()=>{ // Pos
-      let res = '[${prefix}pos] { display: inline-block; position: absolute !important; }'
+      let res = ''
       for(let x = 0; x <= gridCells; x++) {
         res += `[${prefix}pos~="t${x}"] { top: ${x / gridCells * 100}%; }`
              + `[${prefix}pos~="l${x}"] { left: ${x / gridCells * 100}%; }`
@@ -42,9 +49,6 @@
                + `[${prefix}pos~="h${x}H${y}"] { height: calc(${x / gridCells * 100}% + ${y * cellSize}px); }`
         }
       }
-      res += `[${prefix}pos~="cx"] { transform: translateX(-50%); }`
-           + `[${prefix}pos~="cy"] { transform: translateY(-50%); }`
-           + `[${prefix}pos~="cxy"] { transform: translate(-50%,-50%); }`
       return res
     })())
     + ((()=>{ // Break
@@ -83,11 +87,15 @@
       }
       return res
     })())
+    +((()=>{
+      return `[${prefix}grid~="inline"] {position: relative !important}`
+    })())
 
-    const ele = document.createElement('style')
-    ele.type = 'text/css'
-    ele.appendChild(document.createTextNode(stylesheet))
-    document.head.appendChild(ele)
+    const sheet = document.createElement('style')
+    sheet.type = 'text/css'
+    sheet.appendChild(document.createTextNode(stylesheet))
+    const head = document.getElementsByTagName('head')[0]
+    head.insertBefore(sheet, head.firstChild)
   }
 
   if (typeof module !== 'undefined' && module.exports)
