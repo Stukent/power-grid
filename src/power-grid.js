@@ -7,7 +7,7 @@
     const gridCells = opts.gridCells || 16
     const colsCount = opts.colsCount || 10 // 3200x3200 is big enough for now
     const gridSize = cellSize * gridCells
-    const prefix = opts.prefix || 'data-'
+    const prefix = opts.prefix === undefined ? 'data-' : ''
 
     const stylesheet = ''
     + ((()=>{ // Static
